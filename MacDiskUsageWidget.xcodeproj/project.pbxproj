@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0704D285ADA694827BB6A6DC /* DiskUsageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C8FE7D029451148EA420E4 /* DiskUsageFormatter.swift */; };
+		0CC00383B43621F5E882AE46 /* TimelineProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C184BD664296F7A1A9D5CCF1 /* TimelineProviderTests.swift */; };
+		0FAD98EAEC82CC11CAC23C49 /* MacDiskUsageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA35D05FBE53694023809D11 /* MacDiskUsageWidget.swift */; };
+		0FE4547279183B2051772ADD /* DiskUsageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C8FE7D029451148EA420E4 /* DiskUsageFormatter.swift */; };
+		113B2261947482DE5E410BED /* DiskUsageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9179E6789BB4C2BC6B9675 /* DiskUsageWidgetView.swift */; };
+		14032BBD55FAB8800F7F7257 /* SystemVolumeDiskUsageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4F31F5625CF3DB4D73476 /* SystemVolumeDiskUsageService.swift */; };
+		1521B28C2D307E50721FB0AC /* DiskUsageTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E7FAE2CA773441FCB92BA4 /* DiskUsageTimelineProvider.swift */; };
+		26FB64761CD1F2EF835155DB /* MacDiskUsageWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C232DFCEF6C63EF45736B011 /* MacDiskUsageWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		271C4EB948243BF3898E20E5 /* DiskUsageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C123F1B198F8F0227E40D /* DiskUsageService.swift */; };
+		49A1C6E4F8AB89D3E1BBF71F /* RefreshDiskUsageIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC46F259FCAD635BC5C57 /* RefreshDiskUsageIntent.swift */; };
+		67C3E7968F797A4FE8AB1899 /* DiskUsageTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E7FAE2CA773441FCB92BA4 /* DiskUsageTimelineProvider.swift */; };
+		68EBED3F8F4A75FE7FB0CCD4 /* SystemVolumeDiskUsageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4F31F5625CF3DB4D73476 /* SystemVolumeDiskUsageService.swift */; };
+		876F4F1B16FAA55227B30665 /* UsageSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4E1B1ED06637CC12CC719 /* UsageSeverity.swift */; };
+		8D94BA5D7BDBA9117DF7816D /* DiskUsageWidgetCanvasPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DB42B58EF7316B9025549 /* DiskUsageWidgetCanvasPreview.swift */; };
+		9057C93498E22367E046E534 /* UsageSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4E1B1ED06637CC12CC719 /* UsageSeverity.swift */; };
+		99A9BA4F9329B372E141E74F /* DiskUsageSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB989AE21CDF2C4B58F3822 /* DiskUsageSnapshot.swift */; };
+		A8EC75CF22DC68BAB79FCBF6 /* DiskUsageFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC4C68DA9EDFB0AA73D035 /* DiskUsageFormatterTests.swift */; };
+		AAE876D00FB8E7448D57A4D7 /* RefreshDiskUsageIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC46F259FCAD635BC5C57 /* RefreshDiskUsageIntent.swift */; };
+		BA65169814EAE8DE8A936AA1 /* DiskUsageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C123F1B198F8F0227E40D /* DiskUsageService.swift */; };
+		BDCD38CA28D91A309249AB52 /* DiskUsageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9179E6789BB4C2BC6B9675 /* DiskUsageWidgetView.swift */; };
+		C26BE3155676C81C90010D20 /* DiskUsageSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB989AE21CDF2C4B58F3822 /* DiskUsageSnapshot.swift */; };
+		C36C0AC4EFDFD58D7022DA0D /* DiskUsageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB70EA3D4972BBAAF7AFAD29 /* DiskUsageServiceTests.swift */; };
+		CCBE8C312FD36D4A18E5CBC6 /* MacDiskUsageWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D9C8D9EEFDDEA9B0F400A /* MacDiskUsageWidgetApp.swift */; };
+		CFA928C0D1562AC23D7A1427 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48517B91E119263B0BCEED41 /* ContentView.swift */; };
+		E189CDB4D32B3009CB236787 /* SeverityMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42D0F3A61B8CFC243AE042 /* SeverityMappingTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03A643192DE628C6F5B5C618 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 971C3F2AAC84FF1837CCC6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D68B7EB8507DD390C6D45DE;
+			remoteInfo = MacDiskUsageWidget;
+		};
+		68B3CF758DECFC43C6C2C5F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 971C3F2AAC84FF1837CCC6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 671DE553D1261CCA4BCF8DB3;
+			remoteInfo = MacDiskUsageWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A3AE74D6793CCA96F687A049 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				26FB64761CD1F2EF835155DB /* MacDiskUsageWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		187456E1EEF35610A1D9715F /* MacDiskUsageWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacDiskUsageWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B7DB42B58EF7316B9025549 /* DiskUsageWidgetCanvasPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageWidgetCanvasPreview.swift; sourceTree = "<group>"; };
+		1BCBC46F259FCAD635BC5C57 /* RefreshDiskUsageIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshDiskUsageIntent.swift; sourceTree = "<group>"; };
+		2FE4E1B1ED06637CC12CC719 /* UsageSeverity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageSeverity.swift; sourceTree = "<group>"; };
+		3E9179E6789BB4C2BC6B9675 /* DiskUsageWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageWidgetView.swift; sourceTree = "<group>"; };
+		40C8FE7D029451148EA420E4 /* DiskUsageFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageFormatter.swift; sourceTree = "<group>"; };
+		48517B91E119263B0BCEED41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4FB989AE21CDF2C4B58F3822 /* DiskUsageSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageSnapshot.swift; sourceTree = "<group>"; };
+		67E7FAE2CA773441FCB92BA4 /* DiskUsageTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageTimelineProvider.swift; sourceTree = "<group>"; };
+		6EFC4C68DA9EDFB0AA73D035 /* DiskUsageFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageFormatterTests.swift; sourceTree = "<group>"; };
+		6F42D0F3A61B8CFC243AE042 /* SeverityMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityMappingTests.swift; sourceTree = "<group>"; };
+		700DD58A5251653EBEBA1FC5 /* MacDiskUsageWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacDiskUsageWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7376F5202AA110BDBE775CD2 /* MacDiskUsageWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacDiskUsageWidgetExtension.entitlements; sourceTree = "<group>"; };
+		74BADC117BFCFB1CAAA7893B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AA35D05FBE53694023809D11 /* MacDiskUsageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDiskUsageWidget.swift; sourceTree = "<group>"; };
+		C184BD664296F7A1A9D5CCF1 /* TimelineProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineProviderTests.swift; sourceTree = "<group>"; };
+		C232DFCEF6C63EF45736B011 /* MacDiskUsageWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MacDiskUsageWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E4F31F5625CF3DB4D73476 /* SystemVolumeDiskUsageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemVolumeDiskUsageService.swift; sourceTree = "<group>"; };
+		CB70EA3D4972BBAAF7AFAD29 /* DiskUsageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageServiceTests.swift; sourceTree = "<group>"; };
+		F64C123F1B198F8F0227E40D /* DiskUsageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskUsageService.swift; sourceTree = "<group>"; };
+		FB8D9C8D9EEFDDEA9B0F400A /* MacDiskUsageWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDiskUsageWidgetApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1A33E4A7093E95BF621CA846 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				48517B91E119263B0BCEED41 /* ContentView.swift */,
+				1B7DB42B58EF7316B9025549 /* DiskUsageWidgetCanvasPreview.swift */,
+				FB8D9C8D9EEFDDEA9B0F400A /* MacDiskUsageWidgetApp.swift */,
+			);
+			name = App;
+			path = MacDiskUsageWidget/App;
+			sourceTree = "<group>";
+		};
+		3AC22D3458FD2CC0E8FF1FFF /* MacDiskUsageWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				67E7FAE2CA773441FCB92BA4 /* DiskUsageTimelineProvider.swift */,
+				3E9179E6789BB4C2BC6B9675 /* DiskUsageWidgetView.swift */,
+				AA35D05FBE53694023809D11 /* MacDiskUsageWidget.swift */,
+				1BCBC46F259FCAD635BC5C57 /* RefreshDiskUsageIntent.swift */,
+				4E36744BC3B515117194154C /* Resources */,
+			);
+			path = MacDiskUsageWidgetExtension;
+			sourceTree = "<group>";
+		};
+		44039E50F55AEDDF46093957 = {
+			isa = PBXGroup;
+			children = (
+				1A33E4A7093E95BF621CA846 /* App */,
+				3AC22D3458FD2CC0E8FF1FFF /* MacDiskUsageWidgetExtension */,
+				8EACAA3B5C0515B6755CE770 /* MacDiskUsageWidgetTests */,
+				AD997FA0E2B4D2323571217F /* Shared */,
+				D667A1B39483ECE4B5AFA3FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E36744BC3B515117194154C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74BADC117BFCFB1CAAA7893B /* Info.plist */,
+				7376F5202AA110BDBE775CD2 /* MacDiskUsageWidgetExtension.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8EACAA3B5C0515B6755CE770 /* MacDiskUsageWidgetTests */ = {
+			isa = PBXGroup;
+			children = (
+				6EFC4C68DA9EDFB0AA73D035 /* DiskUsageFormatterTests.swift */,
+				CB70EA3D4972BBAAF7AFAD29 /* DiskUsageServiceTests.swift */,
+				6F42D0F3A61B8CFC243AE042 /* SeverityMappingTests.swift */,
+				C184BD664296F7A1A9D5CCF1 /* TimelineProviderTests.swift */,
+			);
+			path = MacDiskUsageWidgetTests;
+			sourceTree = "<group>";
+		};
+		AD997FA0E2B4D2323571217F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				40C8FE7D029451148EA420E4 /* DiskUsageFormatter.swift */,
+				F64C123F1B198F8F0227E40D /* DiskUsageService.swift */,
+				4FB989AE21CDF2C4B58F3822 /* DiskUsageSnapshot.swift */,
+				C8E4F31F5625CF3DB4D73476 /* SystemVolumeDiskUsageService.swift */,
+				2FE4E1B1ED06637CC12CC719 /* UsageSeverity.swift */,
+			);
+			name = Shared;
+			path = MacDiskUsageWidget/Shared;
+			sourceTree = "<group>";
+		};
+		D667A1B39483ECE4B5AFA3FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187456E1EEF35610A1D9715F /* MacDiskUsageWidget.app */,
+				C232DFCEF6C63EF45736B011 /* MacDiskUsageWidgetExtension.appex */,
+				700DD58A5251653EBEBA1FC5 /* MacDiskUsageWidgetTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D68B7EB8507DD390C6D45DE /* MacDiskUsageWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B50AA70F13311D819899E69F /* Build configuration list for PBXNativeTarget "MacDiskUsageWidget" */;
+			buildPhases = (
+				95A3225D9AD2980938AAC754 /* Sources */,
+				A3AE74D6793CCA96F687A049 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6359FF0230955C28A9B1B6 /* PBXTargetDependency */,
+			);
+			name = MacDiskUsageWidget;
+			packageProductDependencies = (
+			);
+			productName = MacDiskUsageWidget;
+			productReference = 187456E1EEF35610A1D9715F /* MacDiskUsageWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		671DE553D1261CCA4BCF8DB3 /* MacDiskUsageWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB690A9CCCF312A9B7019B39 /* Build configuration list for PBXNativeTarget "MacDiskUsageWidgetExtension" */;
+			buildPhases = (
+				187A66EBF1BCDE14C1708FD7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacDiskUsageWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MacDiskUsageWidgetExtension;
+			productReference = C232DFCEF6C63EF45736B011 /* MacDiskUsageWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A8499B71AA20C745F5D0AD7C /* MacDiskUsageWidgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 463DDEABEDAF76139648AF08 /* Build configuration list for PBXNativeTarget "MacDiskUsageWidgetTests" */;
+			buildPhases = (
+				FA0D2A1250278B85EBDA8D86 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D14DB1818A2003E7D3C91131 /* PBXTargetDependency */,
+			);
+			name = MacDiskUsageWidgetTests;
+			packageProductDependencies = (
+			);
+			productName = MacDiskUsageWidgetTests;
+			productReference = 700DD58A5251653EBEBA1FC5 /* MacDiskUsageWidgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		971C3F2AAC84FF1837CCC6AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 8A9F413542731E847DD1D108 /* Build configuration list for PBXProject "MacDiskUsageWidget" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 44039E50F55AEDDF46093957;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D68B7EB8507DD390C6D45DE /* MacDiskUsageWidget */,
+				671DE553D1261CCA4BCF8DB3 /* MacDiskUsageWidgetExtension */,
+				A8499B71AA20C745F5D0AD7C /* MacDiskUsageWidgetTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		187A66EBF1BCDE14C1708FD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE4547279183B2051772ADD /* DiskUsageFormatter.swift in Sources */,
+				271C4EB948243BF3898E20E5 /* DiskUsageService.swift in Sources */,
+				C26BE3155676C81C90010D20 /* DiskUsageSnapshot.swift in Sources */,
+				1521B28C2D307E50721FB0AC /* DiskUsageTimelineProvider.swift in Sources */,
+				BDCD38CA28D91A309249AB52 /* DiskUsageWidgetView.swift in Sources */,
+				0FAD98EAEC82CC11CAC23C49 /* MacDiskUsageWidget.swift in Sources */,
+				AAE876D00FB8E7448D57A4D7 /* RefreshDiskUsageIntent.swift in Sources */,
+				68EBED3F8F4A75FE7FB0CCD4 /* SystemVolumeDiskUsageService.swift in Sources */,
+				876F4F1B16FAA55227B30665 /* UsageSeverity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A3225D9AD2980938AAC754 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFA928C0D1562AC23D7A1427 /* ContentView.swift in Sources */,
+				0704D285ADA694827BB6A6DC /* DiskUsageFormatter.swift in Sources */,
+				BA65169814EAE8DE8A936AA1 /* DiskUsageService.swift in Sources */,
+				99A9BA4F9329B372E141E74F /* DiskUsageSnapshot.swift in Sources */,
+				67C3E7968F797A4FE8AB1899 /* DiskUsageTimelineProvider.swift in Sources */,
+				8D94BA5D7BDBA9117DF7816D /* DiskUsageWidgetCanvasPreview.swift in Sources */,
+				113B2261947482DE5E410BED /* DiskUsageWidgetView.swift in Sources */,
+				CCBE8C312FD36D4A18E5CBC6 /* MacDiskUsageWidgetApp.swift in Sources */,
+				49A1C6E4F8AB89D3E1BBF71F /* RefreshDiskUsageIntent.swift in Sources */,
+				14032BBD55FAB8800F7F7257 /* SystemVolumeDiskUsageService.swift in Sources */,
+				9057C93498E22367E046E534 /* UsageSeverity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0D2A1250278B85EBDA8D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8EC75CF22DC68BAB79FCBF6 /* DiskUsageFormatterTests.swift in Sources */,
+				C36C0AC4EFDFD58D7022DA0D /* DiskUsageServiceTests.swift in Sources */,
+				E189CDB4D32B3009CB236787 /* SeverityMappingTests.swift in Sources */,
+				0CC00383B43621F5E882AE46 /* TimelineProviderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F6359FF0230955C28A9B1B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 671DE553D1261CCA4BCF8DB3 /* MacDiskUsageWidgetExtension */;
+			targetProxy = 68B3CF758DECFC43C6C2C5F8 /* PBXContainerItemProxy */;
+		};
+		D14DB1818A2003E7D3C91131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D68B7EB8507DD390C6D45DE /* MacDiskUsageWidget */;
+			targetProxy = 03A643192DE628C6F5B5C618 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E210C85FD6D23026333F3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacDiskUsageWidget/Resources/MacDiskUsageWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacDiskUsageWidget/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.MacDiskUsageWidget;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6181ACE2045B3F83293360E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MacDiskUsageWidgetExtension/Resources/MacDiskUsageWidgetExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacDiskUsageWidgetExtension/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mac Disk Usage Widget";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.MacDiskUsageWidget.extension;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		63E1AF9598B3A91755DBF7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MacDiskUsageWidgetExtension/Resources/MacDiskUsageWidgetExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacDiskUsageWidgetExtension/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mac Disk Usage Widget";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.MacDiskUsageWidget.extension;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7A8F00BD38E0D22EFF8466F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacDiskUsageWidget/Resources/MacDiskUsageWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacDiskUsageWidget/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.MacDiskUsageWidget;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9A9FCE1993124AB866AC2DB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.MacDiskUsageWidgetTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacDiskUsageWidget.app/Contents/MacOS/MacDiskUsageWidget";
+			};
+			name = Release;
+		};
+		B1DD7B496B3B5C4D9A701A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		CF9F06E420916F9551EF4F8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		E4BD3DB791D32A9BBA04ACD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.MacDiskUsageWidgetTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacDiskUsageWidget.app/Contents/MacOS/MacDiskUsageWidget";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		463DDEABEDAF76139648AF08 /* Build configuration list for PBXNativeTarget "MacDiskUsageWidgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BD3DB791D32A9BBA04ACD1 /* Debug */,
+				9A9FCE1993124AB866AC2DB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8A9F413542731E847DD1D108 /* Build configuration list for PBXProject "MacDiskUsageWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1DD7B496B3B5C4D9A701A01 /* Debug */,
+				CF9F06E420916F9551EF4F8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B50AA70F13311D819899E69F /* Build configuration list for PBXNativeTarget "MacDiskUsageWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E210C85FD6D23026333F3CF /* Debug */,
+				7A8F00BD38E0D22EFF8466F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DB690A9CCCF312A9B7019B39 /* Build configuration list for PBXNativeTarget "MacDiskUsageWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6181ACE2045B3F83293360E2 /* Debug */,
+				63E1AF9598B3A91755DBF7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 971C3F2AAC84FF1837CCC6AD /* Project object */;
+}

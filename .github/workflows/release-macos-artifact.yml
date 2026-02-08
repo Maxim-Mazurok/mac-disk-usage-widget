@@ -1,0 +1,56 @@
+name: Release macOS Artifact
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build-release-artifact:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build app (Release)
+        env:
+          DERIVED_DATA: ${{ runner.temp }}/DerivedData
+        run: |
+          xcodebuild \
+            -project MacDiskUsageWidget.xcodeproj \
+            -scheme MacDiskUsageWidget \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            -derivedDataPath "$DERIVED_DATA" \
+            CODE_SIGNING_ALLOWED=NO \
+            clean build
+
+      - name: Ad-hoc sign app
+        env:
+          DERIVED_DATA: ${{ runner.temp }}/DerivedData
+        run: |
+          APP_PATH="$DERIVED_DATA/Build/Products/Release/MacDiskUsageWidget.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "App bundle not found at $APP_PATH"
+            exit 1
+          fi
+          codesign --force --deep --sign - "$APP_PATH"
+
+      - name: Package app
+        env:
+          DERIVED_DATA: ${{ runner.temp }}/DerivedData
+        run: |
+          APP_PATH="$DERIVED_DATA/Build/Products/Release/MacDiskUsageWidget.app"
+          ZIP_NAME="MacDiskUsageWidget-macOS.zip"
+          ditto -c -k --sequesterRsrc --keepParent "$APP_PATH" "$ZIP_NAME"
+          shasum -a 256 "$ZIP_NAME" > "$ZIP_NAME.sha256"
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            MacDiskUsageWidget-macOS.zip
+            MacDiskUsageWidget-macOS.zip.sha256

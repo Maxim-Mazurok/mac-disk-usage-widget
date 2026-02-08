@@ -1,0 +1,74 @@
+name: MacDiskUsageWidget
+options:
+  minimumXcodeGenVersion: 2.38.0
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    SWIFT_VERSION: "6.0"
+configs:
+  Debug: debug
+  Release: release
+targets:
+  MacDiskUsageWidget:
+    type: application
+    platform: macOS
+    sources:
+      - path: MacDiskUsageWidget/App
+      - path: MacDiskUsageWidget/Shared
+      - path: MacDiskUsageWidgetExtension
+        includes:
+          - DiskUsageTimelineProvider.swift
+          - DiskUsageWidgetView.swift
+          - RefreshDiskUsageIntent.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.max.MacDiskUsageWidget
+        CODE_SIGN_ENTITLEMENTS: MacDiskUsageWidget/Resources/MacDiskUsageWidget.entitlements
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSHumanReadableCopyright: ""
+    info:
+      path: MacDiskUsageWidget/Resources/Info.plist
+      properties:
+        LSMinimumSystemVersion: "14.0"
+    dependencies:
+      - target: MacDiskUsageWidgetExtension
+
+  MacDiskUsageWidgetExtension:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: MacDiskUsageWidgetExtension
+      - path: MacDiskUsageWidget/Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.max.MacDiskUsageWidget.extension
+        CODE_SIGN_ENTITLEMENTS: MacDiskUsageWidgetExtension/Resources/MacDiskUsageWidgetExtension.entitlements
+        INFOPLIST_KEY_CFBundleDisplayName: Mac Disk Usage Widget
+    info:
+      path: MacDiskUsageWidgetExtension/Resources/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+
+  MacDiskUsageWidgetTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: MacDiskUsageWidgetTests
+    dependencies:
+      - target: MacDiskUsageWidget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.max.MacDiskUsageWidgetTests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  MacDiskUsageWidget:
+    build:
+      targets:
+        MacDiskUsageWidget: all
+        MacDiskUsageWidgetExtension: all
+    test:
+      targets:
+        - MacDiskUsageWidgetTests
