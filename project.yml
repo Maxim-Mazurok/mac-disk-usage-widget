@@ -31,6 +31,8 @@ targets:
     info:
       path: MacDiskUsageWidget/Resources/Info.plist
       properties:
+        CFBundleDisplayName: Mac Disk Usage Widget
+        CFBundleName: Mac Disk Usage Widget
         LSMinimumSystemVersion: "14.0"
     dependencies:
       - target: MacDiskUsageWidgetExtension

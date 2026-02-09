@@ -28,7 +28,14 @@ struct DiskUsageWidgetView: View {
             }
         }
         .padding(12)
-        .containerBackground(.regularMaterial, for: .widget)
+        .background {
+            if shouldUsePreviewBackgroundFallback {
+                widgetBackground
+            }
+        }
+        .containerBackground(for: .widget) {
+            widgetBackground
+        }
     }
 
     @ViewBuilder
@@ -50,7 +57,6 @@ struct DiskUsageWidgetView: View {
             HStack(alignment: .firstTextBaseline) {
                 Text(DiskUsageFormatter.percentageString(for: entry.snapshot.usedFraction))
                     .font(.system(size: 22, weight: .bold, design: .rounded))
-                    .foregroundStyle(entry.severity.color)
 
                 Spacer()
 
@@ -72,7 +78,6 @@ struct DiskUsageWidgetView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(DiskUsageFormatter.percentageString(for: entry.snapshot.usedFraction))
                     .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .foregroundStyle(entry.severity.color)
 
                 usageProgressBar
 
@@ -112,7 +117,6 @@ struct DiskUsageWidgetView: View {
 
             Text(DiskUsageFormatter.percentageString(for: entry.snapshot.usedFraction))
                 .font(.system(size: 34, weight: .bold, design: .rounded))
-                .foregroundStyle(entry.severity.color)
 
             usageProgressBar
 
@@ -170,7 +174,6 @@ struct DiskUsageWidgetView: View {
         WidgetProgressBar(
             value: normalizedUsageFraction,
             height: 8,
-            fullColorFill: entry.severity.color,
             renderingModeOverride: previewRenderingModeOverride
         )
             .frame(maxWidth: .infinity)
@@ -178,6 +181,33 @@ struct DiskUsageWidgetView: View {
 
     private var normalizedUsageFraction: Double {
         min(max(entry.snapshot.usedFraction, 0), 1)
+    }
+
+    private var shouldUsePreviewBackgroundFallback: Bool {
+        Self.isRunningInPreview && previewFamilyOverride != nil
+    }
+
+    @ViewBuilder
+    private var widgetBackground: some View {
+        if entry.snapshot.isAvailable {
+            ZStack {
+                Rectangle()
+                    .fill(.regularMaterial)
+
+                Rectangle()
+                    .fill(
+                        LinearGradient(
+                            colors: entry.severity.backgroundTintColors,
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .opacity(0.55)
+            }
+        } else {
+            Rectangle()
+                .fill(.regularMaterial)
+        }
     }
 
     private var refreshIconButton: some View {
@@ -242,7 +272,6 @@ struct DiskUsageWidgetView: View {
 private struct WidgetProgressBar: View {
     let value: Double
     let height: CGFloat
-    let fullColorFill: Color
     let renderingModeOverride: WidgetRenderingMode?
 
     @Environment(\.widgetRenderingMode) private var renderingMode
@@ -259,8 +288,8 @@ private struct WidgetProgressBar: View {
                     .widgetAccentable(false)
 
                 Capsule(style: .circular)
-                    .fill(fillColor)
-                    .widgetAccentable()
+                    .fill(.primary.opacity(fillOpacity))
+                    .widgetAccentable(false)
                     .frame(width: fillWidth)
             }
             .frame(height: height)
@@ -268,10 +297,6 @@ private struct WidgetProgressBar: View {
         .frame(height: height)
         .accessibilityLabel("Disk usage progress")
         .accessibilityValue("\(Int((min(max(value, 0), 1) * 100).rounded()))%")
-    }
-
-    private var fillColor: Color {
-        effectiveRenderingMode == .fullColor ? fullColorFill : .primary
     }
 
     private var trackOpacity: Double {
@@ -282,20 +307,37 @@ private struct WidgetProgressBar: View {
         return 0.22
     }
 
+    private var fillOpacity: Double {
+        if effectiveRenderingMode == .accented || effectiveRenderingMode == .vibrant {
+            return 0.8
+        }
+
+        return 0.55
+    }
+
     private var effectiveRenderingMode: WidgetRenderingMode {
         renderingModeOverride ?? renderingMode
     }
 }
 
 private extension UsageSeverity {
-    var color: Color {
+    var backgroundTintColors: [Color] {
         switch self {
         case .normal:
-            return .green
+            return [
+                Color(red: 0.81, green: 0.90, blue: 0.86),
+                Color(red: 0.74, green: 0.86, blue: 0.80)
+            ]
         case .warning:
-            return .yellow
+            return [
+                Color(red: 0.95, green: 0.89, blue: 0.78),
+                Color(red: 0.93, green: 0.85, blue: 0.72)
+            ]
         case .critical:
-            return .red
+            return [
+                Color(red: 0.93, green: 0.82, blue: 0.80),
+                Color(red: 0.90, green: 0.76, blue: 0.74)
+            ]
         }
     }
 }

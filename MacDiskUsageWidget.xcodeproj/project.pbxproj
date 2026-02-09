@@ -29,6 +29,7 @@
 		BDCD38CA28D91A309249AB52 /* DiskUsageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9179E6789BB4C2BC6B9675 /* DiskUsageWidgetView.swift */; };
 		C26BE3155676C81C90010D20 /* DiskUsageSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB989AE21CDF2C4B58F3822 /* DiskUsageSnapshot.swift */; };
 		C36C0AC4EFDFD58D7022DA0D /* DiskUsageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB70EA3D4972BBAAF7AFAD29 /* DiskUsageServiceTests.swift */; };
+		C687041A5C761CA9D8F43769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5B4D4C85D69145E932268E /* Assets.xcassets */; };
 		CCBE8C312FD36D4A18E5CBC6 /* MacDiskUsageWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D9C8D9EEFDDEA9B0F400A /* MacDiskUsageWidgetApp.swift */; };
 		CFA928C0D1562AC23D7A1427 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48517B91E119263B0BCEED41 /* ContentView.swift */; };
 		E189CDB4D32B3009CB236787 /* SeverityMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42D0F3A61B8CFC243AE042 /* SeverityMappingTests.swift */; };
@@ -80,6 +81,7 @@
 		700DD58A5251653EBEBA1FC5 /* MacDiskUsageWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacDiskUsageWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7376F5202AA110BDBE775CD2 /* MacDiskUsageWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacDiskUsageWidgetExtension.entitlements; sourceTree = "<group>"; };
 		74BADC117BFCFB1CAAA7893B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9F5B4D4C85D69145E932268E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA35D05FBE53694023809D11 /* MacDiskUsageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDiskUsageWidget.swift; sourceTree = "<group>"; };
 		C184BD664296F7A1A9D5CCF1 /* TimelineProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineProviderTests.swift; sourceTree = "<group>"; };
 		C232DFCEF6C63EF45736B011 /* MacDiskUsageWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MacDiskUsageWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 		1A33E4A7093E95BF621CA846 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				9F5B4D4C85D69145E932268E /* Assets.xcassets */,
 				48517B91E119263B0BCEED41 /* ContentView.swift */,
 				1B7DB42B58EF7316B9025549 /* DiskUsageWidgetCanvasPreview.swift */,
 				FB8D9C8D9EEFDDEA9B0F400A /* MacDiskUsageWidgetApp.swift */,
@@ -175,6 +178,7 @@
 			buildConfigurationList = B50AA70F13311D819899E69F /* Build configuration list for PBXNativeTarget "MacDiskUsageWidget" */;
 			buildPhases = (
 				95A3225D9AD2980938AAC754 /* Sources */,
+				BB7DC82B5F502F9A573058A6 /* Resources */,
 				A3AE74D6793CCA96F687A049 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -253,6 +257,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB7DC82B5F502F9A573058A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C687041A5C761CA9D8F43769 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		187A66EBF1BCDE14C1708FD7 /* Sources */ = {
