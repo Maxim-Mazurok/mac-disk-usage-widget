@@ -112,13 +112,7 @@ struct ContentView: View {
         }
         .padding(20)
         .frame(minWidth: 460, minHeight: 360)
-        .background(
-            LinearGradient(
-                colors: [Color(nsColor: .windowBackgroundColor), Color(nsColor: .underPageBackgroundColor)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        )
+        .background(Color(nsColor: .windowBackgroundColor))
     }
 
     private var header: some View {
