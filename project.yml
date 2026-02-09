@@ -26,16 +26,55 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.max.MacDiskUsageWidget
         CODE_SIGN_ENTITLEMENTS: MacDiskUsageWidget/Resources/MacDiskUsageWidget.entitlements
+        INFOPLIST_KEY_CFBundleIconFile: AppIcon
+        INFOPLIST_KEY_CFBundleIconName: AppIcon
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
         INFOPLIST_KEY_NSHumanReadableCopyright: ""
     info:
       path: MacDiskUsageWidget/Resources/Info.plist
       properties:
         CFBundleDisplayName: Mac Disk Usage Widget
+        CFBundleIconFile: AppIcon
+        CFBundleIconName: AppIcon
         CFBundleName: Mac Disk Usage Widget
         LSMinimumSystemVersion: "14.0"
     dependencies:
       - target: MacDiskUsageWidgetExtension
+    postBuildScripts:
+      - name: Compile Icon Composer App Icon
+        basedOnDependencyAnalysis: false
+        script: |
+          set -euo pipefail
+
+          ICON_SOURCE="${SRCROOT}/icon/icon.icon"
+          ASSET_CATALOG="${SRCROOT}/MacDiskUsageWidget/App/Assets.xcassets"
+          OUTPUT_DIR="${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+          PARTIAL_INFO_PLIST="${TARGET_TEMP_DIR}/icon_composer_generated_info.plist"
+          STAGED_ICON_SOURCE="${TARGET_TEMP_DIR}/AppIcon.icon"
+
+          if [ ! -d "${ICON_SOURCE}" ]; then
+            echo "warning: Icon source not found at ${ICON_SOURCE}; skipping Icon Composer compilation."
+            exit 0
+          fi
+
+          rm -rf "${STAGED_ICON_SOURCE}"
+          cp -R "${ICON_SOURCE}" "${STAGED_ICON_SOURCE}"
+
+          xcrun actool \
+            "${ASSET_CATALOG}" \
+            "${STAGED_ICON_SOURCE}" \
+            --compile "${OUTPUT_DIR}" \
+            --output-format human-readable-text \
+            --warnings \
+            --notices \
+            --output-partial-info-plist "${PARTIAL_INFO_PLIST}" \
+            --app-icon AppIcon \
+            --enable-on-demand-resources NO \
+            --development-region "${DEVELOPMENT_LANGUAGE}" \
+            --target-device mac \
+            --minimum-deployment-target "${MACOSX_DEPLOYMENT_TARGET}" \
+            --platform macosx \
+            --bundle-identifier "${PRODUCT_BUNDLE_IDENTIFIER}" > /dev/null
 
   MacDiskUsageWidgetExtension:
     type: app-extension

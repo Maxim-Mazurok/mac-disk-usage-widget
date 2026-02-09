@@ -180,6 +180,7 @@
 				95A3225D9AD2980938AAC754 /* Sources */,
 				BB7DC82B5F502F9A573058A6 /* Resources */,
 				A3AE74D6793CCA96F687A049 /* Embed Foundation Extensions */,
+				682B8FFABD8D1DDBC9E1A0D0 /* Compile Icon Composer App Icon */,
 			);
 			buildRules = (
 			);
@@ -269,6 +270,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		682B8FFABD8D1DDBC9E1A0D0 /* Compile Icon Composer App Icon */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Icon Composer App Icon";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\n\nICON_SOURCE=\"${SRCROOT}/icon/icon.icon\"\nASSET_CATALOG=\"${SRCROOT}/MacDiskUsageWidget/App/Assets.xcassets\"\nOUTPUT_DIR=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\nPARTIAL_INFO_PLIST=\"${TARGET_TEMP_DIR}/icon_composer_generated_info.plist\"\nSTAGED_ICON_SOURCE=\"${TARGET_TEMP_DIR}/AppIcon.icon\"\n\nif [ ! -d \"${ICON_SOURCE}\" ]; then\n  echo \"warning: Icon source not found at ${ICON_SOURCE}; skipping Icon Composer compilation.\"\n  exit 0\nfi\n\nrm -rf \"${STAGED_ICON_SOURCE}\"\ncp -R \"${ICON_SOURCE}\" \"${STAGED_ICON_SOURCE}\"\n\nxcrun actool \\\n  \"${ASSET_CATALOG}\" \\\n  \"${STAGED_ICON_SOURCE}\" \\\n  --compile \"${OUTPUT_DIR}\" \\\n  --output-format human-readable-text \\\n  --warnings \\\n  --notices \\\n  --output-partial-info-plist \"${PARTIAL_INFO_PLIST}\" \\\n  --app-icon AppIcon \\\n  --enable-on-demand-resources NO \\\n  --development-region \"${DEVELOPMENT_LANGUAGE}\" \\\n  --target-device mac \\\n  --minimum-deployment-target \"${MACOSX_DEPLOYMENT_TARGET}\" \\\n  --platform macosx \\\n  --bundle-identifier \"${PRODUCT_BUNDLE_IDENTIFIER}\" > /dev/null\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		187A66EBF1BCDE14C1708FD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,6 +361,8 @@
 				CODE_SIGN_ENTITLEMENTS = MacDiskUsageWidget/Resources/MacDiskUsageWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MacDiskUsageWidget/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleIconFile = AppIcon;
+				INFOPLIST_KEY_CFBundleIconName = AppIcon;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -390,6 +415,8 @@
 				CODE_SIGN_ENTITLEMENTS = MacDiskUsageWidget/Resources/MacDiskUsageWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MacDiskUsageWidget/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleIconFile = AppIcon;
+				INFOPLIST_KEY_CFBundleIconName = AppIcon;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
